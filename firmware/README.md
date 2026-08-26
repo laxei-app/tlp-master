@@ -37,6 +37,38 @@ anything:
 | 8MB | M5StickS3 | `hgc-edge-stick-s3.bin` |
 | 16MB | M5Stack CoreS3 | `hgc-edge-core-s3.bin` |
 
+## Knowing what is already on a device
+
+Each image carries its own identity at a fixed address, so the phone can tell what a
+device is running before deciding what to write. The identity lives in the standard
+ESP-IDF application descriptor, which the format guarantees to be at **application
+start + 0x20** — flash address `0x10020`:
+
+| offset | field | contents |
+|--------|-------|----------|
+| desc+0 | `magic_word` | `0xABCD5432` — confirms this really is the descriptor |
+| desc+16 | `version` | e.g. `0.1.427` |
+| desc+48 | `project_name` | `HolyGrailEdge` |
+| desc+176 | reserved[0] | CRC32 over the 64 bytes holding version and name |
+
+The build stamps these fields in place of the toolchain's own values (see
+`50_tools/edge/stamp_fw.py` in the main repository). Stamping rewrites bytes inside a
+signed image, so the tool also refreshes **both** integrity values the bootloader
+checks — the XOR checksum byte and the appended SHA-256 — and `esptool image_info`
+is run afterwards to confirm the result still validates.
+
+What the phone does with it:
+
+| what it finds | what it writes |
+|---------------|----------------|
+| same version | nothing — the device is already up to date |
+| different version, same bootloader and partition table | application only, from `0xE000` — **settings survive** |
+| CRC does not verify, or a different bootloader/partition table | the whole image from `0x0` — settings are erased |
+
+Settings (Wi-Fi credentials, device name, time zone) live in NVS at
+`0x9000`–`0xE000`, which is why an application-only write starts at `0xE000` — it is
+the first 4KB boundary past them.
+
 ## Verifying a download
 
 `manifest.json` carries `size` and `sha256` for every image. Check both before
