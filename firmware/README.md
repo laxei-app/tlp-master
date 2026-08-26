@@ -35,7 +35,7 @@ anything:
 | flash size | model | image |
 |-----------|-------|-------|
 | 8MB | M5StickS3 | `hgc-edge-stick-s3.bin` |
-| 16MB | M5Stack CoreS3 | (not published yet) |
+| 16MB | M5Stack CoreS3 | `hgc-edge-core-s3.bin` |
 
 ## Verifying a download
 

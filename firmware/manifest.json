@@ -13,6 +13,18 @@
       "offset": 0,
       "size": 2685504,
       "sha256": "d18d0210aa10013a2657c851063670998fca1a8ec1d33a4f4c8ecdaa5f255fa3"
+    },
+    {
+      "id": "core-s3",
+      "name": "M5Stack CoreS3",
+      "chip": "esp32s3",
+      "flashSize": "16MB",
+      "version": "0.1.426",
+      "build": "debug",
+      "file": "hgc-edge-core-s3.bin",
+      "offset": 0,
+      "size": 2643376,
+      "sha256": "6af55b8626c91092ef6de8af99696c1471efb9ab6d5dfddd4cbe5cb1c4d01694"
     }
   ]
 }
