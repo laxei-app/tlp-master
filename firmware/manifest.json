@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "updated": "2026-08-26",
+  "edge": [
+    {
+      "id": "stick-s3",
+      "name": "M5StickS3",
+      "chip": "esp32s3",
+      "flashSize": "8MB",
+      "version": "0.1.425",
+      "build": "debug",
+      "file": "hgc-edge-stick-s3.bin",
+      "offset": 0,
+      "size": 2685504,
+      "sha256": "d18d0210aa10013a2657c851063670998fca1a8ec1d33a4f4c8ecdaa5f255fa3"
+    }
+  ]
+}
