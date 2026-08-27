@@ -1,0 +1,9 @@
+# Serve these byte for byte.
+#
+# The app checks a SHA256 from manifest.json before it will use a downloaded list, and
+# that hash is computed over the file as it sits on disk. If git normalises line endings
+# on the way in or out, the bytes raw.githubusercontent.com serves no longer match the
+# hash and the app correctly refuses the update — which looks like "the list never
+# updates" and is tedious to trace. Marking them binary keeps the two identical.
+*.json -text
+*.bin  -text
