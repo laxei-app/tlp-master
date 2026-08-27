@@ -49,13 +49,21 @@ start + 0x20** — flash address `0x10020`:
 | desc+0 | `magic_word` | `0xABCD5432` — confirms this really is the descriptor |
 | desc+16 | `version` | e.g. `0.1.427` |
 | desc+48 | `project_name` | `HolyGrailEdge` |
-| desc+176 | reserved[0] | CRC32 over the 64 bytes holding version and name |
+| desc+176 | `min/max_efuse_blk_rev_full` | **boot requirement — never write here** |
+| desc+180 | reserved[0] | CRC32 over the 64 bytes holding version and name |
 
 The build stamps these fields in place of the toolchain's own values (see
 `50_tools/edge/stamp_fw.py` in the main repository). Stamping rewrites bytes inside a
 signed image, so the tool also refreshes **both** integrity values the bootloader
 checks — the XOR checksum byte and the appended SHA-256 — and `esptool image_info`
 is run afterwards to confirm the result still validates.
+
+One trap is worth spelling out: ESP-IDF 5.3 added `min_efuse_blk_rev_full` and
+`max_efuse_blk_rev_full` at desc+176, so the descriptor's reserved area now starts at
+desc+180. Writing the check value at 176 produced images that passed every check
+`esptool image_info` performs and still refused to boot — the bootloader rejected them
+with `Image requires efuse blk rev >= v328.11`. The stamping tool now verifies those
+four bytes are untouched before it writes anything out.
 
 What the phone does with it:
 
