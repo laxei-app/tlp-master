@@ -1,30 +1,30 @@
 {
   "schema": 1,
-  "updated": "2026-08-26",
+  "updated": "2026-09-05",
   "edge": [
     {
       "id": "stick-s3",
       "name": "M5StickS3",
       "chip": "esp32s3",
       "flashSize": "8MB",
-      "version": "0.1.434",
+      "version": "0.1.593",
       "build": "debug",
       "file": "hgc-edge-stick-s3.bin",
       "offset": 0,
-      "size": 2685520,
-      "sha256": "3c34539dc10625fc9365f569805500e763fcf4a598e01c37decfab655cd76c76"
+      "size": 2712032,
+      "sha256": "13e46efc7f5761d0d1088fd2e451b20afdc0f1c7df5cad96014965f7482e2ce3"
     },
     {
       "id": "core-s3",
       "name": "M5Stack CoreS3",
       "chip": "esp32s3",
       "flashSize": "16MB",
-      "version": "0.1.435",
+      "version": "0.1.594",
       "build": "debug",
       "file": "hgc-edge-core-s3.bin",
       "offset": 0,
-      "size": 2643376,
-      "sha256": "e75577f338730d9a1b2e81d02135dd787046b0c3c95f590af3ca84be5f9e4603"
+      "size": 2669968,
+      "sha256": "1aaaba17084ef3f7c613dfc9487f5f0ae12f861d9337c6e3f1a90b8dfb5f3d43"
     }
   ]
 }
