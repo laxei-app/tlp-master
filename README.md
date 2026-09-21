@@ -1,2 +1,2 @@
-# hgc-master
-Supported camera and lens profiles for HolyGrailController.
+# tlp-master
+Supported camera and lens profiles for TwyLapse.

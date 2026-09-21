@@ -1,6 +1,6 @@
 # Edge firmware images
 
-Firmware for the HolyGrailController edge devices (M5Stack, ESP32-S3).
+Firmware for the TwyLapse edge devices (M5Stack, ESP32-S3).
 The phone app fetches `manifest.json`, picks the entry that matches the attached
 device, downloads the image and writes it over USB.
 
@@ -34,8 +34,8 @@ anything:
 
 | flash size | model | image |
 |-----------|-------|-------|
-| 8MB | M5StickS3 | `hgc-edge-stick-s3.bin` |
-| 16MB | M5Stack CoreS3 | `hgc-edge-core-s3.bin` |
+| 8MB | M5StickS3 | `tlp-edge-stick-s3.bin` |
+| 16MB | M5Stack CoreS3 | `tlp-edge-core-s3.bin` |
 
 ## Knowing what is already on a device
 
@@ -48,7 +48,7 @@ start + 0x20** — flash address `0x10020`:
 |--------|-------|----------|
 | desc+0 | `magic_word` | `0xABCD5432` — confirms this really is the descriptor |
 | desc+16 | `version` | e.g. `0.1.427` |
-| desc+48 | `project_name` | `HolyGrailEdge` |
+| desc+48 | `project_name` | `TwyLapseEdge` |
 | desc+176 | `min/max_efuse_blk_rev_full` | **boot requirement — never write here** |
 | desc+180 | reserved[0] | CRC32 over the 64 bytes holding version and name |
 
@@ -88,7 +88,7 @@ until it is re-flashed from a PC.
 Built with PlatformIO, then merged with esptool:
 
 ```
-esptool.py --chip esp32s3 merge_bin -o hgc-edge-stick-s3.bin \
+esptool.py --chip esp32s3 merge_bin -o tlp-edge-stick-s3.bin \
   --flash_mode dio --flash_freq 80m --flash_size 8MB \
   0x0     bootloader.bin \
   0x8000  partitions.bin \
