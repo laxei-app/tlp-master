@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "archive": [
+    {
+      "id": "stick-s3",
+      "name": "M5StickS3",
+      "version": "0.3.1",
+      "build": "release",
+      "file": "tlp-edge-stick-s3-0.3.1-relink.zip",
+      "size": 39027611,
+      "sha256": "98122f4996f3b259be60e8784228d43f1fe1bafa2cb09da0e5889e297966cffd"
+    },
+    {
+      "id": "core-s3",
+      "name": "M5Stack CoreS3",
+      "version": "0.3.1",
+      "build": "release",
+      "file": "tlp-edge-core-s3-0.3.1-relink.zip",
+      "size": 39011739,
+      "sha256": "6c765d9bd6a4a48ae1571473bdb3939688f7d73fd9c03776a45b509e940464a1"
+    }
+  ]
+}
