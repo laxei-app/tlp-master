@@ -7,24 +7,24 @@
       "name": "M5StickS3",
       "chip": "esp32s3",
       "flashSize": "8MB",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "build": "release",
       "file": "tlp-edge-stick-s3.bin",
       "offset": 0,
-      "size": 2394256,
-      "sha256": "0073dc01d93c6c6ca64f3f14eaba604b5a0b1461c705087ae4429b9992391623"
+      "size": 2393072,
+      "sha256": "ec67493795ef0171565f3df4f43410b4e4d305bd8f26a4332d0f800f942ae822"
     },
     {
       "id": "core-s3",
       "name": "M5Stack CoreS3",
       "chip": "esp32s3",
       "flashSize": "16MB",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "build": "release",
       "file": "tlp-edge-core-s3.bin",
       "offset": 0,
-      "size": 2353408,
-      "sha256": "7f81d190307714b8634f92c7a220fb9fd8b64f9500d1b3dc9a0384f033fd0852"
+      "size": 2352192,
+      "sha256": "31866833c811604216d0e4cf2399e413dde3c2f201b8f1be4f621f66445a0d00"
     }
   ]
 }
