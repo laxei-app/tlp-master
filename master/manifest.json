@@ -1,19 +1,19 @@
 {
   "schema": 1,
-  "revision": 6,
-  "updated": "2026-10-03",
+  "revision": 7,
+  "updated": "2026-10-05",
   "files": [
     {
       "name": "cameras.json",
-      "size": 18525,
-      "sha256": "5b7fac32bed148bd425808eceee64bbd87330e755b48c3a7f4524c5dd9eeab5b",
-      "count": 18
+      "size": 19639,
+      "sha256": "0fbf2ec2d64cb0241872c9537c332804ad6eff7ac7114b698a3d4c400ddf3c16",
+      "count": 19
     },
     {
       "name": "lenses.json",
-      "size": 40620,
-      "sha256": "67a8079d03afad97f4d9f59c534cf72ae3a281f06cf87829e048ee7f318137ae",
-      "count": 150
+      "size": 59523,
+      "sha256": "9a32c61ce81f889d4bcd3b6bebfba65fca9fa1272451e264c6e0249ec39834ff",
+      "count": 232
     },
     {
       "name": "mounts.json",
